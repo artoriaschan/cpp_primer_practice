@@ -2,13 +2,13 @@
 // Created by ArtoriasChan on 2020/5/20.
 //
 #include <iostream>
-#include "ch03.cpp"
+#include "ch03.h"
 
 
 int main() {
 //    sum50To100();
 //    reverse10To0();
-//    printBewteenTwoNums();
+//    printBetweenTwoNums();
 //    readline();
 //    readword();
 //    printLargestString();
@@ -18,6 +18,8 @@ int main() {
 //    excludePunctuation();
 //    readNumsAndSave();
 //    vectorSize();
-    upperWords();
+//    upperWords();
+//    checkAll();
+    text2Upper();
     return 0;
 }

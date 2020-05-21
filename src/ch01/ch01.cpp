@@ -3,6 +3,6 @@
 //
 #include <iostream>
 
-std::string sayHelloCh01(){
+std::string sayHelloCh01() {
     return "Hello, World! ch01";
 }

@@ -32,7 +32,7 @@ int reverse10To0() {
     return 0;
 }
 
-void printBewteenTwoNums() {
+void printBetweenTwoNums() {
     cout << "please enter two numbers: " << endl;
     int start, end;
     cin >> start >> end;
@@ -154,21 +154,66 @@ int vectorSize() {
     vector<string> v6{10};
     vector<string> v7{10, "hi"};
 
-    if (v1.size() == 0) cout << "v1.size() equals 0" << endl;
+    if (v1.empty()) cout << "v1.size() equals 0" << endl;
     if (v2.size() == 10) cout << "v2.size() equals 10" << endl;
     if (v3.size() == 10) cout << "v3.size() equals 10" << endl;
     if (v4.size() == 1) cout << "v4.size() equals 1" << endl;
     if (v5.size() == 2) cout << "v5.size() equals 2" << endl;
     if (v6.size() == 10) cout << "v6.size() equals 10" << endl;
     if (v7.size() == 10) cout << "v7.size() equals 10" << endl;
+    return 0;
 }
 
 int upperWords() {
     vector<string> svec;
     for (string buffer; cin >> buffer; svec.push_back(buffer));
     for (auto &str : svec) for (auto &c : str) c = toupper(c);
-    for (auto str: svec) {
+    for (auto &str: svec) {
         cout << str << endl;
     }
     return 0;
+}
+
+// 3.3.4
+void checkAndPrint(const vector<int> &vec) {
+    cout << "size: " << vec.size() << "  content: [";
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+        cout << *it << (it != vec.end() - 1 ? "," : "");
+    cout << "]\n" << endl;
+}
+
+void checkAndPrint(const vector<string> &vec) {
+    cout << "size: " << vec.size() << "  content: [";
+    for (auto it = vec.begin(); it != vec.end(); ++it)
+        cout << *it << (it != vec.end() - 1 ? "," : "");
+    cout << "]\n" << endl;
+}
+
+void checkAll() {
+    vector<int> v1;
+    vector<int> v2(10);
+    vector<int> v3(10, 42);
+    vector<int> v4{10};
+    vector<int> v5{10, 42};
+    vector<string> v6{10};
+    vector<string> v7{10, "hi"};
+
+    checkAndPrint(v1);
+    checkAndPrint(v2);
+    checkAndPrint(v3);
+    checkAndPrint(v4);
+    checkAndPrint(v5);
+    checkAndPrint(v6);
+    checkAndPrint(v7);
+}
+
+void text2Upper() {
+    vector<string> text;
+    for (string line; getline(cin, line); text.push_back(line));
+    for (auto &word: text) {
+        for (auto &ch: word) {
+            if (isalpha(ch)) ch = toupper(ch);
+        }
+        cout << word << " ";
+    }
 }
